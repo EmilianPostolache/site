@@ -1,7 +1,7 @@
 # Site settings
 title: Emilian Postolache # site title
 description: >- # site description
-  I am a Research Fellow at Ca' Foscari University of Venice, working on Compositional Music Generation and affine topics (Source Separation, Evaluation Metrics, etc.).
+  I am a Research Fellow at Ca' Foscari University of Venice, interested in generative models, especially applied to compositional music generation. I also worked on source separation, foley sound synthesis, EEG music decoding and machine translation. I pursued internships at Dolby Laboratories, SonyCSL Tokyo and visited the Center For Digital Music in Queen Mary University of London.
 lang: en-US # default lang
 timezone: Europe/Rome # set your timezone
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
@@ -12,7 +12,7 @@ mode: dark # default theme "dark" | "light"
 author:
   name: Emilian Postolache # author name
   bio: >- # tell to the world
-    I am a Research Fellow at Ca' Foscari University of Venice, working on Compositional Music Generation and affine topics (Source Separation, Evaluation Metrics, etc.).
+  I am a Research Fellow at Ca' Foscari University of Venice, interested in generative models, especially applied to compositional music generation. I also worked on source separation, foley sound synthesis, EEG music decoding and machine translation. I pursued internships at Dolby Laboratories, SonyCSL Tokyo and visited the Center For Digital Music in Queen Mary University of London.
   username: emilianpos # general username
   github: EmilianPostolache # github username
   twitter: EmilianPostola1 # twitter username
