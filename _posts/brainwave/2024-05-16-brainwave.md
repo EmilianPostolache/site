@@ -18,21 +18,43 @@ In this article, we explore the potential of using latent diffusion models, a fa
 
 #### Track 23 - Test chunk
 
-GT: <audio src="/assets/audio/brainwave/1/gt.wav" controls>
+**GT** <audio src="/assets/audio/brainwave/1/gt.wav" controls>
 Your browser does not support the audio element.
 </audio> 
 
-Generated from EEG: 
-
-<audio src="/assets/audio/brainwave/1/gen.wav" controls>
+**Generated from EEG** <audio src="/assets/audio/brainwave/1/gen.wav" controls>
 Your browser does not support the audio element.
 </audio> 
 
 #### Track 26 - Test chunk
 
+**GT** <audio src="/assets/audio/brainwave/25/gt.wav" controls>
+Your browser does not support the audio element.
+</audio> 
+
+**Generated from EEG** <audio src="/assets/audio/brainwave/25/gen.wav" controls>
+Your browser does not support the audio element.
+</audio> 
+
 #### Track 27 - Test chunk
+
+**GT** <audio src="/assets/audio/brainwave/32/gt.wav" controls>
+Your browser does not support the audio element.
+</audio> 
+
+**Generated from EEG** <audio src="/assets/audio/brainwave/32/gen.wav" controls>
+Your browser does not support the audio element.
+</audio>
 
 #### Track 22 - Test chunk
 
+
+**GT** <audio src="/assets/audio/brainwave/61/gt.wav" controls>
+Your browser does not support the audio element.
+</audio> 
+
+**Generated from EEG** <audio src="/assets/audio/brainwave/61/gen.wav" controls>
+Your browser does not support the audio element.
+</audio>
 
 
