@@ -6,7 +6,6 @@ categories: paper
 usemathjax: true
 ---
 
-
 # Naturalistic Music Decoding from EEG Data via Latent Diffusion Models
 
 ## Abstract
