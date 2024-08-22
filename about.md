@@ -7,5 +7,5 @@ comments: false
 ---
 
 
-- {{ site.author.email }}
-- github.com/{{ site.author.github }}
+- [{{ site.author.email }}]({{ site.author.email }})
+- [github.com/{{ site.author.github }}](github.com/{{ site.author.github }})
