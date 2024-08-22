@@ -1,7 +1,7 @@
 # Site settings
 title: Emilian Postolache # site title
 description: >- # site description
-  Senior AI Research Scientist @ Iris Audio Technologies. Previous: Sapienza University of Rome (PhD), Ca' Foscari University of Venice (PostDoc), Queen Mary University of London (Visitor), Dolby Labs (Intern) and Sony CSL Tokyo (Intern).
+  Senior AI Research Scientist @ Iris Audio Technologies. Ph.D. in Computer Science.
 lang: en-US # default lang
 timezone: Europe/Rome # set your timezone
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
@@ -12,7 +12,7 @@ mode: light # default theme "dark" | "light"
 author:
   name: Emilian Postolache # author name
   bio: >- # tell to the world
-   Senior AI Research Scientist @ Iris Audio Technologies. Previous: Sapienza University of Rome (PhD), Ca' Foscari University of Venice (PostDoc), Queen Mary University of London (Visitor), Dolby Labs (Intern) and Sony CSL Tokyo (Intern).
+   Senior AI Research Scientist @ Iris Audio Technologies. Ph.D. in Computer Science.
   username: emilianpos # general username
   github: EmilianPostolache # github username
   twitter: EmilianPostola1 # twitter username
