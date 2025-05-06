@@ -8,9 +8,8 @@ usemathjax: true
 
 ## *ICASSP 2025 Conference Paper*
 
-<a href="https://arxiv.org/abs/2405.09062v6">arXiv</a>
-
-<a href="https://ieeexplore.ieee.org/document/10887735">IEEE Xplore</a>
+- <a href="https://arxiv.org/abs/2405.09062v6">arXiv</a>
+- <a href="https://ieeexplore.ieee.org/document/10887735">IEEE Xplore</a>
 
 ## Abstract
 
