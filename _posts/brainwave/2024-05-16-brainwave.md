@@ -6,7 +6,7 @@ categories: paper
 usemathjax: true
 ---
 
-ICASSP 2025 Conference Paper
+## *ICASSP 2025 Conference Paper*
 
 <a href="https://arxiv.org/abs/2405.09062v6">arXiv</a>
 
