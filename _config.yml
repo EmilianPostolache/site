@@ -12,7 +12,7 @@ mode: light # default theme "dark" | "light"
 author:
   name: Emilian Postolache # author name
   bio: >- # tell to the world
-   ead Machine Learning Researcher @ Iris Audio Technologies. Ph.D. in Computer Science.
+   Lead Machine Learning Researcher @ Iris Audio Technologies. Ph.D. in Computer Science.
   username: emilianpos # general username
   github: EmilianPostolache # github username
   twitter: EmilianPostola1 # twitter username
