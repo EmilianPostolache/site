@@ -2,7 +2,7 @@
 title: Emilian Postolache
 permalink: /about/
 layout: page
-excerpt: I am a Senior Research AI Scientist at IRIS Audio Technologies.
+excerpt: I am a Lead Machine Learning Researcher at IRIS Audio Technologies.
 comments: false
 ---
 
