@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f4ef">
   <script src="theme.js?v=ad501976a5e4"></script>
-  <meta name="description" content="I’m Emilian. I work on speech enhancement, generative audio and efficient inference, among other things. I’m currently interested in making audio AI models, including generative models, work in highly constrained environments.">
-  <meta property="og:title" content="Emilian Postolache — Audio AI + Efficiency">
-  <meta property="og:description" content="I’m Emilian. I work on speech enhancement, generative audio and efficient inference, among other things. I’m currently interested in making audio AI models, including generative models, work in highly constrained environments.">
+  <meta name="description" content="I’m Emilian. I work on speech enhancement, generative audio and efficient inference, among other things. I’m currently interested in making audio models that run efficiently in highly constrained environments.">
+  <meta property="og:title" content="Emilian Postolache — Audio ML + Efficiency">
+  <meta property="og:description" content="I’m Emilian. I work on speech enhancement, generative audio and efficient inference, among other things. I’m currently interested in making audio models that run efficiently in highly constrained environments.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://emilianpostolache.com/assets/portrait.jpg">
   <meta property="og:url" content="https://emilianpostolache.com/">
   <link rel="canonical" href="https://emilianpostolache.com/">
-  <title>Emilian Postolache — Audio AI + Efficiency</title>
-  <link rel="icon" href="assets/favicon.svg?v=7bcd84abb286" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=7c6e96480ebe">
+  <title>Emilian Postolache</title>
+  <link rel="icon" href="assets/favicon.svg?v=56b0183e9f21" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=b9de69981e98">
   <script src="script.js?v=bd6a8e3b2fb4" defer></script>
   <script src="carousel.js?v=ef4b20fd47e7" defer></script>
 </head>
@@ -35,8 +35,8 @@
   <main id="main">
     <section class="hero wrap" id="home" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <h1 id="hero-title">Audio AI + <br><em>Efficiency.</em></h1>
-        <p class="hero-intro">I’m Emilian. I work on speech enhancement, generative audio and efficient inference, among other things. I’m currently interested in making audio AI models, including generative models, work in highly constrained environments.</p>
+        <h1 id="hero-title">Audio ML + <br><em>Efficiency.</em></h1>
+        <p class="hero-intro">I’m Emilian. I work on speech enhancement, generative audio and efficient inference, among other things. I’m currently interested in making audio models that run efficiently in highly constrained environments.</p>
         <div class="hero-actions"><a class="button button-primary" href="#research">Explore my research <span aria-hidden="true">↓</span></a><a class="text-link" href="#contact">Get in touch <span aria-hidden="true">↗</span></a></div>
         <div class="current-role"><span class="small-label">CURRENTLY</span><span>Lead Machine Learning Researcher<br><strong>IRIS Audio Technologies</strong> <span class="role-city">/ London, UK</span></span></div>
       </div>
@@ -46,19 +46,24 @@
         <a class="carousel-stage" id="carousel-open" href="#paper-msdm" draggable="false" aria-label="View Multi-Source Diffusion Models in Selected research, Generative audio" aria-describedby="carousel-instructions">
           <div class="carousel-track">
             <figure class="research-slide" id="research-slide-1" data-research-slide data-paper-label="MSDM / ICLR 2024" data-paper-id="paper-msdm" data-category="generative" data-paper-name="Multi-Source Diffusion Models" role="group" aria-roledescription="slide" aria-label="1 of 5: Multi-Source Diffusion Models" aria-hidden="false">
-              <img class="signal-svg" src="assets/multi-source-generation.svg?v=397eb47c1d81" width="560" height="410" draggable="false" alt="Conceptual illustration of piano, bass and drum sources emerging from noise through a joint generative process. Their distinct waveforms share musical structure." fetchpriority="high">
+              <img data-theme-variant="light" class="signal-svg" src="assets/multi-source-generation-light.svg?v=97027a2bdc79" width="560" height="410" draggable="false" alt="Conceptual illustration of piano, bass and drum sources emerging from noise through a joint generative process. Their distinct waveforms share musical structure." fetchpriority="high">
+              <img data-theme-variant="dark" class="signal-svg" src="assets/multi-source-generation-dark.svg?v=59cbb28262e0" width="560" height="410" draggable="false" alt="Conceptual illustration of piano, bass and drum sources emerging from noise through a joint generative process. Their distinct waveforms share musical structure." fetchpriority="high">
             </figure>
             <figure class="research-slide" id="research-slide-2" data-research-slide data-paper-label="COCOLA / ICASSP 2025" data-paper-id="paper-cocola" data-category="representations" data-paper-name="COCOLA" role="group" aria-roledescription="slide" aria-label="2 of 5: COCOLA" aria-hidden="true" hidden>
-              <img class="signal-svg" src="assets/cocola.svg?v=2fa625b05f8d" width="560" height="410" draggable="false" alt="Conceptual illustration of musical stems encoded as representations, with coherent combinations grouped together and unrelated combinations apart.">
+              <img data-theme-variant="light" class="signal-svg" src="assets/cocola-light.svg?v=51d5772ea63d" width="560" height="410" draggable="false" alt="Conceptual illustration of musical stems encoded as representations, with coherent combinations grouped together and unrelated combinations apart.">
+              <img data-theme-variant="dark" class="signal-svg" src="assets/cocola-dark.svg?v=249c17e90f6e" width="560" height="410" draggable="false" alt="Conceptual illustration of musical stems encoded as representations, with coherent combinations grouped together and unrelated combinations apart.">
             </figure>
             <figure class="research-slide" id="research-slide-3" data-research-slide data-paper-label="EEG DECODING / ICASSP 2025" data-paper-id="paper-eeg" data-category="generative" data-paper-name="Music from brain recordings" role="group" aria-roledescription="slide" aria-label="3 of 5: Music from brain recordings" aria-hidden="true" hidden>
-              <img class="signal-svg" src="assets/eeg-decoding.svg?v=c5538edad052" width="560" height="410" draggable="false" alt="Conceptual illustration of EEG recordings conditioning a latent diffusion process that reconstructs music.">
+              <img data-theme-variant="light" class="signal-svg" src="assets/eeg-decoding-light.svg?v=748fe58b5621" width="560" height="410" draggable="false" alt="Conceptual illustration of EEG recordings conditioning a latent diffusion process that reconstructs music.">
+              <img data-theme-variant="dark" class="signal-svg" src="assets/eeg-decoding-dark.svg?v=bf6a1149c586" width="560" height="410" draggable="false" alt="Conceptual illustration of EEG recordings conditioning a latent diffusion process that reconstructs music.">
             </figure>
             <figure class="research-slide" id="research-slide-4" data-research-slide data-paper-label="SYNCFUSION / ICASSP 2024" data-paper-id="paper-syncfusion" data-category="generative" data-paper-name="SyncFusion" role="group" aria-roledescription="slide" aria-label="4 of 5: SyncFusion" aria-hidden="true" hidden>
-              <img class="signal-svg" src="assets/syncfusion.svg?v=93dfd3deb078" width="560" height="410" draggable="false" alt="Conceptual illustration of action onsets from video and text conditioning guiding generated Foley sound aligned to visible events.">
+              <img data-theme-variant="light" class="signal-svg" src="assets/syncfusion-light.svg?v=349a99bba63f" width="560" height="410" draggable="false" alt="Conceptual illustration of action onsets from video and text conditioning guiding generated Foley sound aligned to visible events.">
+              <img data-theme-variant="dark" class="signal-svg" src="assets/syncfusion-dark.svg?v=9c2b92471d98" width="560" height="410" draggable="false" alt="Conceptual illustration of action onsets from video and text conditioning guiding generated Foley sound aligned to visible events.">
             </figure>
             <figure class="research-slide" id="research-slide-5" data-research-slide data-paper-label="PARALLEL DECODING / ACL 2023" data-paper-id="paper-parallel" data-category="inference" data-paper-name="Parallel transformer decoding" role="group" aria-roledescription="slide" aria-label="5 of 5: Parallel transformer decoding" aria-hidden="true" hidden>
-              <img class="signal-svg" src="assets/parallel-decoding.svg?v=1487d49678c2" width="560" height="410" draggable="false" alt="Conceptual illustration contrasting sequential token decoding with several parallel token-update iterations converging to a translation.">
+              <img data-theme-variant="light" class="signal-svg" src="assets/parallel-decoding-light.svg?v=ca691b13e3dd" width="560" height="410" draggable="false" alt="Conceptual illustration contrasting sequential token decoding with several parallel token-update iterations converging to a translation.">
+              <img data-theme-variant="dark" class="signal-svg" src="assets/parallel-decoding-dark.svg?v=9c62c61f13d1" width="560" height="410" draggable="false" alt="Conceptual illustration contrasting sequential token decoding with several parallel token-update iterations converging to a translation.">
             </figure>
           </div>
         </a>
@@ -98,9 +103,9 @@
 
 
     <section class="section wrap experience-section" id="experience" aria-labelledby="experience-title">
-      <div class="section-heading"><div><p class="eyebrow">02 / Experience</p><h2 id="experience-title">Research, with<br><em>real-world intent.</em></h2></div><p class="heading-aside">From academic exploration to audio models designed for embedded deployment.</p></div>
+      <div class="section-heading"><div><p class="eyebrow">02 / Experience</p><h2 id="experience-title">Research, with<br><em>real-world intent.</em></h2></div></div>
       <div class="experience-layout">
-        <aside class="experience-aside"><span class="small-label">CURRENT CHAPTER</span><h3>IRIS Audio<br>Technologies<span aria-hidden="true">↗</span></h3><p>Leading end-to-end ML research in speech enhancement, audio super-resolution, speech-to-text and voice conversion, with a focus on embedded systems.</p><span class="location">London, United Kingdom</span></aside>
+        <aside class="experience-aside"><span class="small-label">CURRENT CHAPTER</span><h3>IRIS Audio<br>Technologies</h3><p>Leading end-to-end ML research in speech enhancement, audio super-resolution, speech-to-text and voice conversion, with a focus on embedded systems.</p><span class="location">London, United Kingdom</span></aside>
         <div class="timeline">
           <article class="timeline-row current"><div class="timeline-date">Feb 2026 — Present</div><div><h3>Lead Machine Learning Researcher</h3><p class="timeline-organisation"><img class="organisation-icon" src="assets/organisations/iris.png" alt="" aria-hidden="true" width="24" height="24" loading="lazy"><span>IRIS Audio Technologies · London</span></p></div></article>
           <article class="timeline-row"><div class="timeline-date">Aug 2024 — Jan 2026</div><div><h3>Senior Machine Learning Researcher</h3><p class="timeline-organisation"><img class="organisation-icon" src="assets/organisations/iris.png" alt="" aria-hidden="true" width="24" height="24" loading="lazy"><span>IRIS Audio Technologies · London</span></p><p class="timeline-detail">Optimising models for real-time speech enhancement on embedded systems.</p></div></article>
