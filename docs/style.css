@@ -89,3 +89,10 @@
 [data-theme="dark"] .organisation-icon--queen-mary{background:#0d3273}
 @media(max-width:760px){.site-header nav{gap:9px}.site-header .nav-cv{min-height:44px;align-items:center;padding:7px 10px;gap:10px}}
 @media(max-width:360px){.site-header{gap:8px}.site-header .identity{gap:8px;font-size:10px}.site-header .identity-sub{font-size:7px}.site-header .monogram{font-size:28px}.site-header nav{gap:6px}}
+
+/* Fixed artwork palettes follow the page theme, including hidden carousel slides.
+   Keep these rules after the base image display rules. No embedded SVG media queries. */
+:root [data-theme-variant="light"]{display:block}
+:root [data-theme-variant="dark"]{display:none}
+:root[data-theme="dark"] [data-theme-variant="light"]{display:none}
+:root[data-theme="dark"] [data-theme-variant="dark"]{display:block}
