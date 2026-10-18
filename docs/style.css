@@ -90,9 +90,11 @@
 @media(max-width:760px){.site-header nav{gap:9px}.site-header .nav-cv{min-height:44px;align-items:center;padding:7px 10px;gap:10px}}
 @media(max-width:360px){.site-header{gap:8px}.site-header .identity{gap:8px;font-size:10px}.site-header .identity-sub{font-size:7px}.site-header .monogram{font-size:28px}.site-header nav{gap:6px}}
 
-/* Fixed artwork palettes follow the page theme, including hidden carousel slides.
-   Keep these rules after the base image display rules. No embedded SVG media queries. */
-:root [data-theme-variant="light"]{display:block}
-:root [data-theme-variant="dark"]{display:none}
+/* Opaque PNG artwork follows the page theme, including hidden carousel slides.
+   The pre-rendered image pixels supply every colour and the background; keep
+   image rendering independent of the page's native-control colour scheme. */
+:root [data-theme-variant]{color-scheme:only light}
+:root [data-theme-variant="light"]{display:block;background-color:#ebece6}
+:root [data-theme-variant="dark"]{display:none;background-color:#20292d}
 :root[data-theme="dark"] [data-theme-variant="light"]{display:none}
 :root[data-theme="dark"] [data-theme-variant="dark"]{display:block}
