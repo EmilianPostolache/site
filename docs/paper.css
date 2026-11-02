@@ -176,7 +176,6 @@ h2{font-size:29px;font-weight:400;letter-spacing:-.025em}
 .contact-section{margin-top:52px;border-top:1px solid var(--ink);padding-top:30px;padding-bottom:44px}
 .email-link{font-size:clamp(23px,4.5vw,34px);letter-spacing:-.025em;overflow-wrap:anywhere}
 .social-links a,.contact-links>.text-link{padding-block:8px}.site-footer{font-variant:small-caps;letter-spacing:.025em}
-@media(min-width:1100px){body{background-image:linear-gradient(to right,transparent calc(50% - 470px),var(--line) calc(50% - 470px),var(--line) calc(50% - 469px),transparent calc(50% - 469px))}}
 @media(max-width:600px){
  .wrap{width:calc(100% - 40px)}.site-header{margin-top:12px;padding-block:4px}nav{width:100%;justify-content:space-between;gap:8px;font-size:13px}
  .hero{padding-top:44px}.document-kicker{font-size:10px;margin-bottom:22px}.hero h1{font-size:clamp(49px,13vw,74px)}.hero h1 sup{font-size:20px;margin-top:10px}
