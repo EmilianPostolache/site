@@ -1,14 +1,13 @@
-@font-face{font-family:'Latin Modern Roman';src:url('assets/fonts/lmroman10-regular.otf') format('opentype');font-weight:400;font-display:swap}
-@font-face{font-family:'Latin Modern Roman';src:url('assets/fonts/lmroman10-bold.otf') format('opentype');font-weight:700;font-display:swap}
-@font-face{font-family:'Latin Modern Roman';src:url('assets/fonts/lmroman10-italic.otf') format('opentype');font-style:italic;font-display:swap}
-@font-face{font-family:'Latin Modern Display';src:url('assets/fonts/lmroman17-regular.otf') format('opentype');font-display:swap}
+@font-face{font-family:'Old Standard TT';src:url('assets/fonts/OldStandard-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Old Standard TT';src:url('assets/fonts/OldStandard-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Old Standard TT';src:url('assets/fonts/OldStandard-Italic.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap}
 /* Homepage typography inspired by the LaTeX article document class.
    Kept separate from the project page's shared stylesheet. */
 :root{color-scheme:light;--paper:#fffffc;--ink:#202020;--muted:#555;--line:#d6d6ce;--blue:#253d78}
 :root[data-theme="dark"]{color-scheme:dark;--paper:#151c20;--ink:#e6ece9;--muted:#b5bdbe;--line:#475155;--blue:#b2c2ee}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:28px}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:'Latin Modern Roman','Computer Modern','CMU Serif','Times New Roman',serif;font-size:18px;line-height:1.55}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Old Standard TT','Computer Modern','CMU Serif','Times New Roman',serif;font-size:18px;line-height:1.55}
 [hidden]{display:none!important}
 .wrap{width:min(760px,calc(100% - 48px));margin-inline:auto}
 a{color:var(--blue);text-decoration:none;text-underline-offset:3px}
@@ -131,11 +130,11 @@ body{line-height:1.65}
 .site-header{border-top:3px solid var(--ink);margin-top:22px;padding-block:12px;font-size:13px}
 .running-title{font-variant:small-caps;letter-spacing:.05em}.running-title>span{color:var(--blue);padding-inline:8px}
  .site-header>nav{margin-left:auto}
-nav{gap:22px}nav a{min-height:44px;display:inline-flex;align-items:center}
+nav{gap:22px;flex-wrap:wrap}nav a{min-height:44px;display:inline-flex;align-items:center}
 .theme-toggle{width:44px;height:44px}
 .hero{padding-top:64px;padding-bottom:30px}
 .document-kicker{text-align:center;color:var(--blue);text-transform:uppercase;letter-spacing:.22em;font-size:11px;margin-bottom:24px}
-.hero h1{font-family:'Latin Modern Display','Times New Roman',serif;font-size:clamp(56px,7.5vw,88px);line-height:.98;letter-spacing:-.045em;position:relative}
+.hero h1{font-family:'Old Standard TT','Times New Roman',serif;font-size:clamp(56px,7.5vw,88px);line-height:.98;letter-spacing:-.045em;position:relative}
 .hero h1 span{font-style:normal}.hero h1 sup{display:inline-block;color:var(--blue);font-size:26px;vertical-align:top;margin:14px -20px 0 5px;letter-spacing:0}
 .document-subtitle{font-size:21px;font-style:italic;margin-top:24px}
 .abstract-title{font-variant:small-caps;font-weight:400;letter-spacing:.09em;margin:38px 0 14px;font-size:18px}

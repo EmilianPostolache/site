@@ -21,6 +21,10 @@
     document.querySelector('meta[name="theme-color"]')?.setAttribute(
       'content', theme === 'dark' ? '#151c20' : '#f5f4ef'
     );
+    document.querySelectorAll('[data-site-icon]').forEach(icon => {
+      const href = icon.dataset[theme];
+      if (href && icon.getAttribute('href') !== href) icon.setAttribute('href', href);
+    });
     document.querySelectorAll('[data-theme-toggle]').forEach(button => {
       button.setAttribute('aria-pressed', String(theme === 'dark'));
       button.setAttribute('title', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
