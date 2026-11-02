@@ -50,6 +50,7 @@
  .sample-index{gap:10px}.sample-index h3{font-size:18px}.sample-index .small-label{font-size:9px}.sample-duration{font-size:11px}
  .sample-player{padding:10px 14px 14px}.project-return{font-size:13px}
 }
+.abstract-copy .publication-date,.subject-label,.sample-duration{font-style:normal}
 @media print{
  .project-breadcrumb,.project-actions,.example-jumps,.project-return,.sample-player audio{display:none}
  .project-hero{padding-top:0}.project-intro h1{font-size:26pt}.project-abstract h2{font-size:13pt}

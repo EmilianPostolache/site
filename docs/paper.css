@@ -1,3 +1,4 @@
+@font-face{font-family:'Source Sans 3';src:url('assets/fonts/SourceSans3-Variable.ttf') format('truetype');font-weight:200 900;font-style:normal;font-display:swap}
 @font-face{font-family:'Old Standard TT';src:url('assets/fonts/OldStandard-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:'Old Standard TT';src:url('assets/fonts/OldStandard-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:'Old Standard TT';src:url('assets/fonts/OldStandard-Italic.ttf') format('truetype');font-weight:400;font-style:italic;font-display:swap}
@@ -135,7 +136,7 @@ nav{gap:22px;flex-wrap:wrap}nav a{min-height:44px;display:inline-flex;align-item
 .hero{padding-top:64px;padding-bottom:30px}
 .document-kicker{text-align:center;color:var(--blue);text-transform:uppercase;letter-spacing:.22em;font-size:11px;margin-bottom:24px}
 .hero h1{font-family:'Old Standard TT','Times New Roman',serif;font-size:clamp(56px,7.5vw,88px);line-height:.98;letter-spacing:-.045em;position:relative}
-.hero h1 span{font-style:normal}.hero h1 sup{display:inline-block;color:var(--blue);font-size:26px;vertical-align:top;margin:14px -20px 0 5px;letter-spacing:0}
+.hero h1 span{font-style:normal}.hero h1 sup{display:inline-block;color:var(--blue);font-size:26px;vertical-align:top;margin:-4px -20px 0 5px;letter-spacing:0}
 .document-subtitle{font-size:21px;font-style:italic;margin-top:24px}
 .abstract-title{font-variant:small-caps;font-weight:400;letter-spacing:.09em;margin:38px 0 14px;font-size:18px}
 .hero-intro{max-width:620px;font-size:18px;line-height:1.65}
@@ -177,7 +178,7 @@ h2{font-size:29px;font-weight:400;letter-spacing:-.025em}
 .social-links a,.contact-links>.text-link{padding-block:8px}.site-footer{font-variant:small-caps;letter-spacing:.025em}
 @media(max-width:600px){
  .wrap{width:calc(100% - 40px)}.site-header{margin-top:12px;padding-block:4px}nav{width:100%;justify-content:space-between;gap:8px;font-size:13px}
- .hero{padding-top:44px}.document-kicker{font-size:10px;margin-bottom:22px}.hero h1{font-size:clamp(49px,13vw,74px)}.hero h1 sup{font-size:20px;margin-top:10px}
+ .hero{padding-top:44px}.document-kicker{font-size:10px;margin-bottom:22px}.hero h1{font-size:clamp(49px,13vw,74px)}.hero h1 sup{font-size:20px;margin-top:-3px}
  .document-subtitle{font-size:17px;max-width:280px;margin:22px auto 0;line-height:1.45}.abstract-title{margin-top:30px}.hero-intro{font-size:17px;line-height:1.65}
  .current-role{font-size:12px}.research-focus{justify-content:center;font-size:12px;gap:4px 8px}.research-focus>.small-label{flex-basis:auto;font-size:12px}
  .section,.about-section{padding-top:44px}h2{font-size:26px}.section-number{min-width:30px;font-size:13px}.section-heading>.text-link{text-align:left;max-width:none}
@@ -186,6 +187,18 @@ h2{font-size:29px;font-weight:400;letter-spacing:-.025em}
  .timeline-row{grid-template-columns:1fr;gap:6px}.experience-aside{padding:16px}.about-details{gap:24px}.contact-section{margin-top:36px;padding-top:28px}.site-footer{font-size:11px}
 }
 @media(prefers-reduced-motion:reduce){.paper{transition:none}}
+
+/* Humanist sans-serif for navigation and supporting information. */
+:root{--sans:'Source Sans 3',Arial,sans-serif}
+.site-header nav,.document-kicker,.small-label,.filters button,#research-count,
+.paper-year,.paper-links,.timeline-date,.education-list dd,.social-links,
+.contact-links>.text-link,.section-heading>.text-link,.site-footer,
+.project-breadcrumb,.project-actions,.example-jumps,.project-return,
+.publication-date,.subject-label,.sample-duration,.player-heading{font-family:var(--sans);font-style:normal}
+.site-header nav,.filters button,.paper-links,.project-actions{font-weight:400}
+.filters button[aria-pressed="true"]{font-weight:600}
+.paper-year .reference-index{font-family:'Old Standard TT','Times New Roman',serif}
+.site-footer{font-variant:normal}
 
 @media print{
  :root,:root[data-theme="dark"]{--paper:#fff;--ink:#000;--muted:#333;--line:#ccc;--blue:#000;color-scheme:light}

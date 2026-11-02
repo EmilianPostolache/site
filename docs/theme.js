@@ -14,6 +14,15 @@
     // A blocked storage API must not prevent switching themes for this visit.
   }
 
+  // The browser colour scheme controls the tab icon, independently of the page.
+  function applyBrowserIcon() {
+    const theme = systemTheme?.matches ? 'dark' : 'light';
+    document.querySelectorAll('[data-site-icon]').forEach(icon => {
+      const href = icon.dataset[theme];
+      if (href && icon.getAttribute('href') !== href) icon.setAttribute('href', href);
+    });
+  }
+
   function applyTheme() {
     const theme = preference || (systemTheme?.matches ? 'dark' : 'light');
     root.dataset.theme = theme;
@@ -21,10 +30,6 @@
     document.querySelector('meta[name="theme-color"]')?.setAttribute(
       'content', theme === 'dark' ? '#151c20' : '#f5f4ef'
     );
-    document.querySelectorAll('[data-site-icon]').forEach(icon => {
-      const href = icon.dataset[theme];
-      if (href && icon.getAttribute('href') !== href) icon.setAttribute('href', href);
-    });
     document.querySelectorAll('[data-theme-toggle]').forEach(button => {
       button.setAttribute('aria-pressed', String(theme === 'dark'));
       button.setAttribute('title', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
@@ -35,6 +40,7 @@
   applyTheme();
 
   function bindToggle() {
+    applyBrowserIcon();
     document.querySelectorAll('[data-theme-toggle]').forEach(button => {
       button.hidden = false;
       button.addEventListener('click', () => {
@@ -56,7 +62,10 @@
     bindToggle();
   }
 
-  const onSystemChange = () => { if (!preference) applyTheme(); };
+  const onSystemChange = () => {
+    applyBrowserIcon();
+    if (!preference) applyTheme();
+  };
   if (systemTheme?.addEventListener) systemTheme.addEventListener('change', onSystemChange);
   else if (systemTheme?.addListener) systemTheme.addListener(onSystemChange);
 
