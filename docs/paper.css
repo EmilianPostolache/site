@@ -143,9 +143,9 @@ nav{gap:22px;flex-wrap:wrap}nav a{min-height:44px;display:inline-flex;align-item
 .hero-actions{margin-top:22px;font-size:15px;gap:28px}
 .hero-actions a{padding:8px 0;border-bottom:1px solid var(--line)}
 .hero-actions a:hover{border-color:var(--blue);text-decoration:none}
-.current-role{margin-top:26px;font-size:13px;color:var(--muted);gap:8px}
-.affiliation-mark{color:var(--blue);font-size:16px}.current-role br{display:block}.current-role strong::before{content:''}
-.research-focus{border-top:0;border-bottom:1px solid var(--ink);font-size:13px;padding-bottom:24px;gap:6px 10px}
+.current-role{margin-top:26px;font-size:13px;color:var(--muted);gap:8px;padding-bottom:24px;border-bottom:1px solid var(--ink)}
+.affiliation-mark{color:var(--blue);font-size:1.2em;line-height:0;vertical-align:super;margin-right:.15em}.current-role br{display:block}.current-role strong::before{content:''}
+.research-focus{border-top:0;border-bottom:0;font-size:13px;padding-bottom:24px;gap:6px 10px}
 .research-focus .small-label{font-style:italic;font-weight:400}.research-focus .small-label::after{content:'.'}
 .section,.about-section,.contact-section{padding-top:60px}
 h2{font-size:29px;font-weight:400;letter-spacing:-.025em}
