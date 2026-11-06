@@ -200,9 +200,49 @@ h2{font-size:29px;font-weight:400;letter-spacing:-.025em}
 .paper-year .reference-index{font-family:'Old Standard TT','Times New Roman',serif}
 .site-footer{font-variant:normal}
 
+/* Paper stock stays behind content; ink texture is scoped separately. */
+body{position:relative;isolation:isolate;background-image:radial-gradient(ellipse at 25% 15%,#ffffff24,transparent 75%)}
+:root[data-theme="dark"] body{background-image:radial-gradient(ellipse at 25% 15%,#ffffff05,transparent 75%)}
+.paper-surface{position:absolute;inset:0;background-size:512px 512px;background-repeat:repeat;z-index:-1;mix-blend-mode:normal;opacity:1;pointer-events:none;user-select:none}
+@media print{.paper-surface{display:none!important}}
+@media(forced-colors:active){.paper-surface{display:none!important}body{background-image:none!important}}
+
 @media print{
  :root,:root[data-theme="dark"]{--paper:#fff;--ink:#000;--muted:#333;--line:#ccc;--blue:#000;color-scheme:light}
  body{font-size:11pt}.wrap{width:100%;max-width:none}.site-header,.hero-actions,.research-tools,.site-footer{display:none}
  .hero{padding-top:0}.hero h1{font-size:24pt}.hero h1 br{display:none}.hero h1 br::after{content:" "}.document-kicker{display:none}body{background-image:none}.section,.about-section,.contact-section{padding-top:24px}
  .paper,.timeline-row,.about-details>div{break-inside:avoid}h2,h3{break-after:avoid}a{color:#000}.portrait-block{display:none}
+}
+
+/* Both typefaces share ink irregularities; small text receives less relief. */
+.print-definitions{position:absolute;overflow:hidden;pointer-events:none}
+paper-ink{display:inline;font:inherit;letter-spacing:inherit;color:inherit}
+.print-finish paper-ink{filter:url(#printed-ink)}
+.print-finish paper-ink.display-ink{filter:url(#printed-ink-display)}
+.print-finish paper-ink.small-ink{filter:url(#printed-ink-small)}
+@media print, (forced-colors:active){.print-finish paper-ink,.print-finish paper-ink.display-ink,.print-finish paper-ink.small-ink{filter:none}}
+
+/* Background subsection titles use the document serif, including their numbers. */
+.about-details h3.small-label{font-family:'Old Standard TT','Times New Roman',serif}
+
+.research-focus .small-label{font-family:'Old Standard TT','Times New Roman',serif}
+
+/* Two opposing turned corners on the photographic print. */
+.portrait-block{padding:0;border:0;filter:drop-shadow(0 2px 2px #211c1526)}
+.portrait-print{--fold:13px;position:relative;display:block;padding:5px;background:#f3f0e7;border:1px solid #bdb8ac;
+ clip-path:polygon(var(--fold) 0,100% 0,100% calc(100% - var(--fold)),calc(100% - var(--fold)) 100%,0 100%,0 var(--fold))}
+.portrait-print::before,.portrait-print::after{content:'';position:absolute;width:var(--fold);height:var(--fold);z-index:1;pointer-events:none}
+.portrait-print::before{top:-1px;left:-1px;clip-path:polygon(100% 0,100% 100%,0 100%);
+ background:linear-gradient(135deg,#bbb4a5 45%,#e2ddd1 52%,#faf7ee 70%,#ded7c8 100%);filter:drop-shadow(1px 1px 1px #211c1559)}
+.portrait-print::after{bottom:-1px;right:-1px;clip-path:polygon(0 0,100% 0,0 100%);
+ background:linear-gradient(135deg,#e6dfd1 0%,#fffdf4 30%,#dad2c2 48%,#a99f8e 56%);filter:drop-shadow(-1px -1px 1px #211c1559)}
+@media(max-width:600px){.portrait-print{--fold:10px}}
+:root[data-theme="dark"] .portrait-block{filter:drop-shadow(0 3px 3px #0008)}
+
+/* Preserve the original native divider bars; retain grain only on boxes. */
+@media screen and (forced-colors:none){
+ .print-finish :is(.oral-badge,.sample-player){position:relative;isolation:isolate;border-color:transparent}
+ .print-finish :is(.oral-badge,.sample-player)::after{content:'';position:absolute;inset:-1px;z-index:-1;pointer-events:none;border-width:inherit;border-style:inherit;border-color:var(--line);filter:url(#printed-rule)}
+ .print-finish .sample-player{background:transparent}
+ .print-finish .sample-player::after{background:var(--wash)}
 }
