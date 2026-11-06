@@ -1,72 +1,20 @@
-/* Paper stock behind content; size-sensitive printed ink on both typefaces. */
+/* Subtle paper stock and box edges; text uses native browser rendering. */
 (() => {
   'use strict';
   const root = document.documentElement;
-  // Filter text and decorative rules separately to avoid compounding the texture.
+  // Decorative box-edge grain is independent of text.
   const ns = 'http://www.w3.org/2000/svg';
   const definitions = document.createElementNS(ns, 'svg');
   definitions.setAttribute('width', '0');
   definitions.setAttribute('height', '0');
   definitions.setAttribute('aria-hidden', 'true');
   definitions.classList.add('print-definitions');
-  // Small type keeps its hairlines; display type reveals more paper tooth.
-  function inkFilter(id, edge, bleed, pores) {
-    return `<filter id="${id}" x="-5%" y="-15%" width="110%" height="130%" color-interpolation-filters="sRGB">
-      <feTurbulence type="fractalNoise" baseFrequency="0.78 0.54" numOctaves="3" seed="17" result="tooth"/>
-      <feDisplacementMap in="SourceGraphic" in2="tooth" scale="${edge}" xChannelSelector="R" yChannelSelector="G" result="impression"/>
-      <!-- Low-opacity capillary spread retains the original ink colour. -->
-      <feGaussianBlur in="impression" stdDeviation="${bleed}" result="spread"/>
-      <feComponentTransfer in="spread" result="wicking"><feFuncA type="linear" slope="0.07"/></feComponentTransfer>
-      <!-- Sparse pores rather than uniform fading across every letter. -->
-      <feColorMatrix in="tooth" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1 0 0 0 0" result="pore-field"/>
-      <feComponentTransfer in="pore-field" result="pores">
-        <feFuncA type="table" tableValues="${pores} 0.86 0.98 0.999 1 1"/>
-      </feComponentTransfer>
-      <feComposite in="impression" in2="pores" operator="in" result="porous-ink"/>
-      <!-- Slower pressure variation makes neighbouring strokes subtly unequal. -->
-      <feTurbulence type="fractalNoise" baseFrequency="0.035 0.075" numOctaves="2" seed="43" result="pressure"/>
-      <feColorMatrix in="pressure" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.08 0 0 0 0.93" result="coverage"/>
-      <feComposite in="porous-ink" in2="coverage" operator="in" result="printed"/>
-      <feMerge><feMergeNode in="wicking"/><feMergeNode in="printed"/></feMerge>
-    </filter>`;
-  }
-  definitions.innerHTML = '<defs>' + inkFilter('printed-ink', 0.24, 0.06, 0.76)
-    + inkFilter('printed-ink-display', 0.40, 0.10, 0.68)
-    + inkFilter('printed-ink-small', 0.11, 0.03, 0.82)
-    + `<filter id="printed-rule" x="-5%" y="-15%" width="110%" height="130%" color-interpolation-filters="sRGB">
-      <!-- Disturb only the geometry: retain the original colour and ink coverage. -->
-      <feTurbulence type="fractalNoise" baseFrequency="0.78 0.54" numOctaves="3" seed="17" result="rule-tooth"/>
-      <feDisplacementMap in="SourceGraphic" in2="rule-tooth" scale="0.32" xChannelSelector="R" yChannelSelector="G"/>
-    </filter></defs>`;
+  definitions.innerHTML = `<defs><filter id="printed-rule" x="-5%" y="-15%" width="110%" height="130%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.78 0.54" numOctaves="3" seed="17" result="rule-tooth"/>
+    <feDisplacementMap in="SourceGraphic" in2="rule-tooth" scale="0.32" xChannelSelector="R" yChannelSelector="G"/>
+  </filter></defs>`;
   document.body.prepend(definitions);
   root.classList.add('print-finish');
-  // Treat both fonts as ink on the same stock, with gentler edges on small type.
-  // Observe replacement labels as well (research counts and audio controls).
-  const textObserver = new MutationObserver(applyInk);
-  function applyInk() {
-    textObserver.disconnect();
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-    const inkRuns = [];
-    while (walker.nextNode()) {
-      const text = walker.currentNode;
-      const parent = text.parentElement;
-      if (!text.textContent.trim() || !parent ||
-          parent.closest('script,style,svg,textarea,select,option,paper-ink,[contenteditable]')) continue;
-      const style = getComputedStyle(parent);
-      const size = parseFloat(style.fontSize);
-      if (size > 0) inkRuns.push({text, size});
-    }
-    for (const {text, size} of inkRuns) {
-      const ink = document.createElement('paper-ink');
-      if (size >= 28) ink.classList.add('display-ink');
-      else if (size <= 14) ink.classList.add('small-ink');
-      text.replaceWith(ink);
-      ink.append(text);
-    }
-    textObserver.observe(document.body, {childList:true, characterData:true, subtree:true});
-  }
-  applyInk();
-
   const canvas = document.createElement('canvas');
   const surface = document.createElement('div');
   surface.className = 'paper-surface';
@@ -129,7 +77,7 @@
       vec3 paper = mix(vec3(247.0, 244.0, 237.0) / 255.0,
                        vec3(28.0, 27.0, 26.0) / 255.0, u_dark);
       // Opaque stock replaces the old nearly invisible translucent overlay.
-      // It remains behind all content; only the separate text filters affect ink.
+      // It remains behind all content; text is rendered directly by the browser.
       vec3 warmth = vec3(cloud * 0.0005, 0.0, -cloud * 0.0008);
       vec3 surface = clamp(paper + vec3(tone * mix(1.0, 0.58, u_dark)) + warmth, 0.0, 1.0);
       gl_FragColor = vec4(surface, 1.0);

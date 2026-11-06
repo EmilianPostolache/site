@@ -214,13 +214,7 @@ body{position:relative;isolation:isolate;background-image:radial-gradient(ellips
  .paper,.timeline-row,.about-details>div{break-inside:avoid}h2,h3{break-after:avoid}a{color:#000}.portrait-block{display:none}
 }
 
-/* Both typefaces share ink irregularities; small text receives less relief. */
 .print-definitions{position:absolute;overflow:hidden;pointer-events:none}
-paper-ink{display:inline;font:inherit;letter-spacing:inherit;color:inherit}
-.print-finish paper-ink{filter:url(#printed-ink)}
-.print-finish paper-ink.display-ink{filter:url(#printed-ink-display)}
-.print-finish paper-ink.small-ink{filter:url(#printed-ink-small)}
-@media print, (forced-colors:active){.print-finish paper-ink,.print-finish paper-ink.display-ink,.print-finish paper-ink.small-ink{filter:none}}
 
 /* Background subsection titles use the document serif, including their numbers. */
 .about-details h3.small-label{font-family:'Old Standard TT','Times New Roman',serif}
