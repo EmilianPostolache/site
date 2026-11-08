@@ -52,33 +52,72 @@
     motion.onfinish = motion.oncancel = () => active.delete(element);
   }
 
-  const observer = new IntersectionObserver(entries => {
-    let order = 0;
-    for (const entry of entries) {
-      if (!entry.isIntersecting) continue;
-      observer.unobserve(entry.target);
-      if (!reducedMotion.matches && !entry.target.contains(document.activeElement)) {
-        impression(entry.target, Math.min(order++,5)*55);
-      }
-    }
-  });
-  const targets = document.querySelectorAll('main h1, main h2, main h3, main p, main dt, main dd, .timeline-date, .current-role > span, .service-list li');
-  for (const element of targets) observer.observe(element);
+  const selector = 'main h1, main h2, main h3, main p, main dt, main dd, .timeline-date, .current-role > span, .service-list li';
+  // On Brainwave this script runs in the head, before the body can paint.
+  // Opacity preserves wrapping, layout measurements and the accessibility tree.
+  const pendingStyle = document.createElement('style');
+  pendingStyle.textContent = `@media screen and (prefers-reduced-motion: no-preference) {
+    :is(${selector}):not([data-print-started]):not(:focus-within) { opacity: 0; }
+  }`;
+  document.head.append(pendingStyle);
 
-  // Focus, print and viewport changes must immediately reveal the original type.
+  let observer;
   function finishPasses() {
     for (const motion of active.values()) motion.cancel();
     active.clear();
   }
+  function revealAll() {
+    pendingStyle.remove();
+    observer?.disconnect();
+    finishPasses();
+  }
+
+  // On a stalled load, show the text once and skip any late animation.
+  const fallback = window.setTimeout(revealAll, 2200);
+  function start() {
+    if (!pendingStyle.isConnected) return;
+    try {
+      observer = new IntersectionObserver(entries => {
+        if (!pendingStyle.isConnected) return;
+        let order = 0;
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          observer.unobserve(entry.target);
+          try {
+            if (!reducedMotion.matches && !entry.target.contains(document.activeElement)) {
+              impression(entry.target, Math.min(order++,5)*55);
+            }
+          } catch {
+            revealAll();
+            return;
+          } finally {
+            entry.target.setAttribute('data-print-started', '');
+          }
+        }
+        window.clearTimeout(fallback);
+      });
+      for (const element of document.querySelectorAll(selector)) observer.observe(element);
+    } catch {
+      revealAll();
+    }
+  }
+
   document.addEventListener('focusin', event => {
-    for (const [element,motion] of active) if (element.contains(event.target)) motion.cancel();
-  });
-  window.addEventListener('beforeprint', finishPasses);
-  window.addEventListener('resize', finishPasses, {passive:true});
-  reducedMotion.addEventListener('change', () => {
-    if (reducedMotion.matches) {
-      observer.disconnect();
-      finishPasses();
+    const element = event.target.closest(selector);
+    if (element) {
+      element.setAttribute('data-print-started', '');
+      observer?.unobserve(element);
+      active.get(element)?.cancel();
     }
   });
+  window.addEventListener('beforeprint', revealAll);
+  window.addEventListener('resize', finishPasses, {passive:true});
+  reducedMotion.addEventListener('change', () => {
+    if (reducedMotion.matches) revealAll();
+  });
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', start, {once:true});
+  } else {
+    start();
+  }
 })();
