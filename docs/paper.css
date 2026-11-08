@@ -84,7 +84,7 @@ nav a{padding-block:10px}
 .timeline-row h3{font-size:17px}
 .timeline-row p{font-size:16px}
 .timeline-organisation{margin-top:3px}
-
+.organisation-icon{display:none}
 .timeline-detail{color:var(--muted);margin-top:4px}
 .earlier-experience summary{cursor:pointer;font-size:15px;margin-block:12px;color:var(--blue)}
 .earlier-experience summary>span{display:none}
