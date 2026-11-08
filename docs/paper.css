@@ -1,3 +1,9 @@
+@font-face{font-family:'PP Editorial New';src:local('PP Editorial New Regular'),local('PPEditorialNew-Regular'),url('assets/fonts/PPEditorialNew-Regular.otf') format('opentype');font-weight:400;font-style:normal}
+@font-face{font-family:'PP Editorial New';src:local('PP Editorial New Italic'),local('PPEditorialNew-Italic'),url('assets/fonts/PPEditorialNew-Italic.otf') format('opentype');font-weight:400;font-style:italic}
+@font-face{font-family:'PP Editorial New';src:local('PP Editorial New Ultrabold'),local('PPEditorialNew-Ultrabold'),url('assets/fonts/PPEditorialNew-Ultrabold.otf') format('opentype');font-weight:700;font-style:normal}
+@font-face{font-family:'PP Editorial New';src:local('PP Editorial New Ultrabold Italic'),local('PPEditorialNew-UltraboldItalic'),url('assets/fonts/PPEditorialNew-UltraboldItalic.otf') format('opentype');font-weight:700;font-style:italic}
+@font-face{font-family:'PP Editorial Sans';src:local('PP Editorial Sans Medium'),local('PPEditorialSans-Medium'),url('assets/fonts/PPEditorialSans-Medium.otf') format('opentype');font-weight:400;font-style:normal}
+@font-face{font-family:'PP Editorial Sans';src:local('PP Editorial Sans Ultrabold'),local('PPEditorialSans-Ultrabold'),url('assets/fonts/PPEditorialSans-Ultrabold.otf') format('opentype');font-weight:700;font-style:normal}
 @font-face{font-family:'Source Sans 3';src:url('assets/fonts/SourceSans3-Variable.ttf') format('truetype');font-weight:200 900;font-style:normal;font-display:swap}
 @font-face{font-family:'Old Standard TT';src:url('assets/fonts/OldStandard-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:'Old Standard TT';src:url('assets/fonts/OldStandard-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
@@ -8,7 +14,7 @@
 :root[data-theme="dark"]{color-scheme:dark;--paper:#151c20;--ink:#e6ece9;--muted:#b5bdbe;--line:#475155;--blue:#b2c2ee}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:28px}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:'Old Standard TT','Computer Modern','CMU Serif','Times New Roman',serif;font-size:18px;line-height:1.55}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'PP Editorial New','Old Standard TT','Computer Modern','CMU Serif','Times New Roman',serif;font-size:18px;line-height:1.55}
 [hidden]{display:none!important}
 .wrap{width:min(760px,calc(100% - 48px));margin-inline:auto}
 a{color:var(--blue);text-decoration:none;text-underline-offset:3px}
@@ -135,7 +141,7 @@ nav{gap:22px;flex-wrap:wrap}nav a{min-height:44px;display:inline-flex;align-item
 .theme-toggle{width:44px;height:44px}
 .hero{padding-top:64px;padding-bottom:30px}
 .document-kicker{text-align:center;color:var(--blue);text-transform:uppercase;letter-spacing:.22em;font-size:11px;margin-bottom:24px}
-.hero h1{font-family:'Old Standard TT','Times New Roman',serif;font-size:clamp(56px,7.5vw,88px);line-height:.98;letter-spacing:-.045em;position:relative}
+.hero h1{font-family:'PP Editorial New','Old Standard TT','Times New Roman',serif;font-size:clamp(56px,7.5vw,88px);line-height:.98;letter-spacing:-.045em;position:relative}
 .hero h1 span{font-style:normal}.hero h1 sup{display:inline-block;color:var(--blue);font-size:26px;vertical-align:top;margin:-4px -20px 0 5px;letter-spacing:0}
 .document-subtitle{font-size:21px;font-style:italic;margin-top:24px}
 .abstract-title{font-variant:small-caps;font-weight:400;letter-spacing:.09em;margin:38px 0 14px;font-size:18px}
@@ -189,7 +195,7 @@ h2{font-size:29px;font-weight:400;letter-spacing:-.025em}
 @media(prefers-reduced-motion:reduce){.paper{transition:none}}
 
 /* Humanist sans-serif for navigation and supporting information. */
-:root{--sans:'Source Sans 3',Arial,sans-serif}
+:root{--sans:'PP Editorial Sans','Source Sans 3',Arial,sans-serif}
 .site-header nav,.document-kicker,.small-label,.filters button,#research-count,
 .paper-year,.paper-links,.timeline-date,.education-list dd,.social-links,
 .contact-links>.text-link,.section-heading>.text-link,.site-footer,
@@ -197,7 +203,7 @@ h2{font-size:29px;font-weight:400;letter-spacing:-.025em}
 .publication-date,.subject-label,.sample-duration,.player-heading{font-family:var(--sans);font-style:normal}
 .site-header nav,.filters button,.paper-links,.project-actions{font-weight:400}
 .filters button[aria-pressed="true"]{font-weight:600}
-.paper-year .reference-index{font-family:'Old Standard TT','Times New Roman',serif}
+.paper-year .reference-index{font-family:'PP Editorial New','Old Standard TT','Times New Roman',serif}
 .site-footer{font-variant:normal}
 
 /* Paper stock stays behind content; ink texture is scoped separately. */
@@ -217,9 +223,9 @@ body{position:relative;isolation:isolate;background-image:radial-gradient(ellips
 .print-definitions{position:absolute;overflow:hidden;pointer-events:none}
 
 /* Background subsection titles use the document serif, including their numbers. */
-.about-details h3.small-label{font-family:'Old Standard TT','Times New Roman',serif}
+.about-details h3.small-label{font-family:'PP Editorial New','Old Standard TT','Times New Roman',serif}
 
-.research-focus .small-label{font-family:'Old Standard TT','Times New Roman',serif}
+.research-focus .small-label{font-family:'PP Editorial New','Old Standard TT','Times New Roman',serif}
 
 /* Two opposing turned corners on the photographic print. */
 .portrait-block{padding:0;border:0;filter:drop-shadow(0 2px 2px #211c1526)}
@@ -240,3 +246,6 @@ body{position:relative;isolation:isolate;background-image:radial-gradient(ellips
  .print-finish .sample-player{background:transparent}
  .print-finish .sample-player::after{background:var(--wash)}
 }
+
+/* The trial serif omits the mathematical asterisk used for the affiliation. */
+.hero h1 sup,.affiliation-mark{font-family:'Old Standard TT','Times New Roman',serif}
