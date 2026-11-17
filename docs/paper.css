@@ -148,7 +148,6 @@ nav{gap:22px;flex-wrap:wrap}nav a{min-height:44px;display:inline-flex;align-item
 .research-focus .small-label{font-style:italic;font-weight:400}.research-focus .small-label::after{content:'.'}
 .section,.about-section,.contact-section{padding-top:60px}
 h2{font-size:29px;font-weight:400;letter-spacing:-.025em}
-.section-number{font-size:14px;color:var(--blue);font-style:italic;letter-spacing:0;display:inline-block;min-width:36px;vertical-align:middle}
 .section-heading{align-items:baseline}.section-heading>.text-link{font-size:13px;white-space:normal;text-align:right;max-width:165px;line-height:1.5}
 .section-lede{color:var(--muted);font-size:17px;max-width:650px}
 .research-tools{margin-top:26px;padding-bottom:10px;border-bottom:1px solid var(--ink);gap:20px}
@@ -180,7 +179,7 @@ h2{font-size:29px;font-weight:400;letter-spacing:-.025em}
  .hero{padding-top:44px}.document-kicker{font-size:10px;margin-bottom:22px}.hero h1{font-size:clamp(49px,13vw,74px)}.hero h1 sup{font-size:20px;margin-top:-3px}
  .document-subtitle{font-size:17px;max-width:280px;margin:22px auto 0;line-height:1.45}.abstract-title{margin-top:30px}.hero-intro{font-size:17px;line-height:1.65}
  .current-role{font-size:12px}.research-focus{justify-content:center;font-size:12px;gap:4px 8px}.research-focus>.small-label{flex-basis:auto;font-size:12px}
- .section,.about-section{padding-top:44px}h2{font-size:26px}.section-number{min-width:30px;font-size:13px}.section-heading>.text-link{text-align:left;max-width:none}
+ .section,.about-section{padding-top:44px}h2{font-size:26px}.section-heading>.text-link{text-align:left;max-width:none}
  .research-tools{margin-top:18px;padding-bottom:12px}.filters{gap:0 16px}.filters button{font-size:13px}#research-count{margin-top:6px;font-size:9px}
  .paper{grid-template-columns:42px minmax(0,1fr);column-gap:14px;padding-block:24px}.paper-content h3{font-size:19px}.paper-content>p{font-size:15px}.paper-content .authors{font-size:12px}.paper-year{font-size:12px}.paper-year>span{font-size:10px}
  .timeline-row{grid-template-columns:1fr;gap:6px}.experience-aside{padding:16px}.about-details{gap:24px}.contact-section{margin-top:36px;padding-top:28px}.site-footer{font-size:11px}

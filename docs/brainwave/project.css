@@ -21,7 +21,6 @@
 .model-examples{margin-top:36px;scroll-margin-top:28px}
 .model-heading{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-bottom:16px;border-bottom:1px solid var(--ink)}
 .model-heading h3{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px;font-size:24px;font-weight:400}
-.subsection-number{color:var(--blue);font-size:14px;font-style:italic}
 .subject-label{color:var(--muted);font-size:13px;font-style:italic}
 .model-heading>.small-label{font-size:10px;letter-spacing:.06em;color:var(--muted);white-space:nowrap}
 .sample-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 24px;border-bottom:1px solid var(--line);padding:22px 0}
